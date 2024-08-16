@@ -1,0 +1,15 @@
+version: "3.9"
+services:
+  bid-buddy-db:
+    image: postgres
+    restart: always
+    container_name: bid-buddy-db
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_PASSWORD: example
+    volumes:
+      - postgres:/var/lib/postgresql/data
+
+volumes:
+  postgres:
