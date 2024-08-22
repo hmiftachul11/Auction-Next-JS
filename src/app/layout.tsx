@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { Inter as FontSans } from "next/font/google"
 import { cn } from "@/lib/utils";
+import { Header } from "./header";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,12 +24,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={cn(
-        "min-h-screen bg-background font-sans antialiased",
-        fontSans.variable
-      )}
+      <body
+        className={cn(
+          "min-h-screen bg-background font-sans antialiased",
+          fontSans.variable
+        )}
       >
-        {children}
+        {/* <SessionProvider> */}
+          {/* <AppKnockProviders> */}
+            <Header />
+            <div className="container mx-auto py-12">{children}</div>
+          {/* </AppKnockProviders> */}
+        {/* </SessionProvider> */}
       </body>
     </html>
   );
